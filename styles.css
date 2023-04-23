@@ -157,6 +157,7 @@ a:hover {
   top: -10px;
   left: 15%;
   border-radius: 16px 16px 0px 0px;
+  animation: button 5s linear infinite;
 }
 
 .flash {
@@ -188,6 +189,7 @@ a:hover {
   background-color: var(--dark-grey);
   top: 15%;
   left: 15%;
+  animation: blinker 5s linear infinite;
 }
 
 .zoom {
@@ -201,6 +203,7 @@ a:hover {
   border: 5px solid var(--grey);
   overflow: hidden;
   z-index: 2;
+  animation: zoom 5s linear infinite;
 }
 
 .zoom::before {
@@ -229,7 +232,7 @@ a:hover {
 .reflections {
   position: absolute;
   background-color: #fff;
-  opacity: 0.3;
+  opacity: 0.1;
   width: 100%;
   height: 100%;
   left: -35%;
@@ -242,12 +245,12 @@ a:hover {
   content: "";
   position: absolute;
   background-color: var(--white);
-  width: 25px;
-  height: 25px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  left: 50%;
+  left: 60%;
   top: 110%;
-  opacity: 0.3;
+  opacity: 0.8;
 }
 
 .stripes {
@@ -259,4 +262,70 @@ a:hover {
   box-shadow: 0px 7px #0e99d9, 0px 14px #32db0e, 0px 21px #fffb06,
     0px 28px #fc9908, 0px 35px #ff3221, 0px 42px #fc87a8;
   z-index: 0.5;
+  opacity: 0.6;
+}
+
+.flashlight {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  transition: all ease 0.2s;
+  opacity: 0;
+  animation: flashlight 5s linear infinite;
+  z-index: 3;
+}
+
+/* Button animation */
+
+@keyframes blinker {
+  23%,
+  27%,
+  29%,
+  33%,
+  35%,
+  40% {
+    background-color: var(--dark-grey);
+  }
+  24%,
+  26%,
+  30%,
+  32%,
+  36%,
+  38% {
+    background-color: red;
+  }
+}
+
+@keyframes zoom {
+  30%,
+  40% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes button {
+  50%,
+  60% {
+    transform: translateY(-2px);
+    overflow: hidden;
+  }
+  55% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes flashlight {
+  65%,
+  75% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
 }
