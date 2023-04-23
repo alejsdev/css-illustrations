@@ -1,11 +1,4 @@
-html,
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
+:root {
   --background-blue: #b5e8fb;
   --background-purple: #f9dbff;
   --grey: #34495e;
@@ -17,10 +10,45 @@ body {
   --dark-yellow: #efbb42;
   --dark-blue: #2c2168;
   --shadow-blue: #20184e;
+  --x-dark: #29284c;
+  --dark: #4c4b82;
+  --medium: #717ae1;
+  --light: #b9befa;
+  --x-light: #d6d9f6;
+  --aqua: #75e2fa;
+  --grey: #9e9ebe;
+}
+
+html,
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  position: absolute;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*::before,
+*::after {
+  content: "";
+  position: absolute;
 }
 
 h1 {
   text-align: center;
+  position: initial;
 }
 
 /* navbar */
@@ -32,7 +60,12 @@ ul {
   gap: 20px;
 }
 
+li {
+  position: initial;
+}
+
 a {
+  position: initial;
   text-decoration: none;
   color: #20184e;
   cursor: pointer;
@@ -54,7 +87,6 @@ a:hover {
 }
 
 .head {
-  position: absolute;
   width: 300px;
   height: 300px;
   border-radius: 50%;
@@ -63,7 +95,6 @@ a:hover {
 }
 
 .face {
-  position: absolute;
   width: 50%;
   height: 55%;
   left: 25%;
@@ -71,7 +102,6 @@ a:hover {
 }
 
 .mouth {
-  position: absolute;
   width: 100%;
   height: 75px;
   bottom: 0;
@@ -83,7 +113,6 @@ a:hover {
 }
 
 .tongue {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 50%;
@@ -93,7 +122,6 @@ a:hover {
 }
 
 .eye-group {
-  position: absolute;
   display: flex;
   gap: 20px;
   width: 150px;
@@ -111,17 +139,14 @@ a:hover {
 }
 
 .eye-left {
-  position: absolute;
   left: 18px;
 }
 
 .eye-right {
-  position: absolute;
   right: 18px;
 }
 
 .pupil {
-  position: absolute;
   width: 8px;
   height: 18px;
   bottom: 10px;
@@ -161,7 +186,6 @@ a:hover {
 }
 
 .flash {
-  position: absolute;
   background: #34495e;
   width: 100px;
   height: 30px;
@@ -171,8 +195,6 @@ a:hover {
 }
 
 .flash::after {
-  content: "";
-  position: absolute;
   width: 40%;
   height: 70%;
   background-color: var(--light-grey);
@@ -182,7 +204,6 @@ a:hover {
 }
 
 .blinker {
-  position: absolute;
   width: 15px;
   height: 15px;
   border-radius: 15px;
@@ -193,7 +214,6 @@ a:hover {
 }
 
 .zoom {
-  position: absolute;
   width: 50%;
   height: 75%;
   left: 25%;
@@ -207,8 +227,6 @@ a:hover {
 }
 
 .zoom::before {
-  content: "";
-  position: absolute;
   width: 80%;
   height: 80%;
   top: 8%;
@@ -219,8 +237,6 @@ a:hover {
 }
 
 .zoom::after {
-  content: "";
-  position: absolute;
   width: 50%;
   height: 50%;
   top: 25%;
@@ -230,7 +246,6 @@ a:hover {
 }
 
 .reflections {
-  position: absolute;
   background-color: #fff;
   opacity: 0.1;
   width: 100%;
@@ -242,8 +257,6 @@ a:hover {
 }
 
 .reflections::after {
-  content: "";
-  position: absolute;
   background-color: var(--white);
   width: 10px;
   height: 10px;
@@ -254,7 +267,6 @@ a:hover {
 }
 
 .stripes {
-  position: absolute;
   height: 7px;
   width: 50%;
   right: 0;
@@ -329,3 +341,5 @@ a:hover {
     opacity: 1;
   }
 }
+
+/* lighthouse */
