@@ -229,8 +229,8 @@ a:hover {
 .zoom::before {
   width: 80%;
   height: 80%;
-  top: 8%;
-  left: 8%;
+  top: 10%;
+  left: 10%;
   border-radius: 50%;
   background: #2c3e50;
   border: 5px solid gray;
